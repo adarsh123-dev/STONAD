@@ -1,6 +1,8 @@
 package com.stonad.controller;
 
 import com.stonad.dao.ArtworkDao;
+import com.stonad.model.Artwork;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
@@ -13,7 +15,7 @@ public class ArtworkDetailsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try {
             int id = Integer.parseInt(req.getParameter("id"));
-            var artwork = dao.findById(id);
+            Artwork artwork = dao.findById(id);
             if (artwork == null) {
                 resp.sendError(404, "Artwork not found");
                 return;
