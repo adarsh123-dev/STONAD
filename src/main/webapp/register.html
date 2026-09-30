@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Register | STONAD</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="form-page">
+<div class="form-card">
+    <a class="logo" href="index.html">STONAD</a>
+    <h1>Create account</h1>
+    <p>Choose how you want to use STONAD.</p>
+    <form action="register" method="post">
+        <input name="name" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <select name="role" required>
+            <option value="VISITOR">Visitor — browse artwork</option>
+            <option value="ARTIST">Artist — showcase artwork</option>
+        </select>
+        <button class="btn" type="submit">Create account</button>
+    </form>
+    <p>Already registered? <a href="login.html">Login</a></p>
+</div>
+</body>
+</html>

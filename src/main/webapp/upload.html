@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Upload Artwork | STONAD</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="form-page">
+<div class="form-card wide">
+    <a class="logo" href="index.html">STONAD</a>
+    <h1>Showcase your artwork</h1>
+    <form action="upload-artwork" method="post" enctype="multipart/form-data">
+        <input name="title" placeholder="Artwork title" required>
+        <textarea name="description" placeholder="Tell people about your artwork"></textarea>
+        <select name="categoryId" required>
+            <option value="1">Painting</option>
+            <option value="2">Sketch</option>
+            <option value="3">Digital Art</option>
+            <option value="4">Photography</option>
+            <option value="5">Sculpture</option>
+            <option value="6">Abstract</option>
+            <option value="7">Other</option>
+        </select>
+        <input name="image" type="file" accept="image/*" required>
+        <button class="btn" type="submit">Publish Artwork</button>
+    </form>
+    <p><a href="gallery">Back to gallery</a></p>
+</div>
+</body>
+</html>
