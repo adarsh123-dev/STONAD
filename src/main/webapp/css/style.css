@@ -867,3 +867,319 @@ footer a:hover {
     }
 
 }
+
+```css
+/* =================================
+   LIKE + COMMENT
+   ================================= */
+
+.social-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 28px 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Remove default form spacing */
+.social-actions form {
+    margin: 0;
+}
+
+/* Like button */
+.like-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: transparent;
+    padding: 8px 10px;
+    color: #666;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Heart icon */
+.like-button i {
+    font-size: 21px;
+    line-height: 1;
+}
+
+/* Like count */
+.like-button .count {
+    font-weight: 700;
+}
+
+/* Hover */
+.like-button:hover {
+    color: #e63946;
+    background: #fff1f2;
+    transform: translateY(-1px);
+}
+
+/* Liked state */
+.like-button.liked {
+    color: #e63946;
+}
+
+.like-button.liked i {
+    animation: heartPop 0.25s ease;
+}
+
+/* Heart animation */
+@keyframes heartPop {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =================================
+   LIKE INFO - LOGGED OUT
+   ================================= */
+
+.like-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 15px;
+}
+
+.like-info i {
+    font-size: 21px;
+    line-height: 1;
+}
+
+
+/* =================================
+   COMMENT INFO
+   ================================= */
+
+.comment-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 10px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.comment-info i {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.comment-info:hover {
+    color: var(--accent);
+    background: var(--soft-purple);
+    transform: translateY(-1px);
+}
+
+/* Count */
+.social-actions .count {
+    font-weight: 700;
+}
+
+
+/* =================================
+   COMMENT SECTION
+   ================================= */
+
+.comment-section {
+    margin-top: 35px;
+}
+
+.comment-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   COMMENT FORM
+   ================================= */
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 0;
+}
+
+.comment-form textarea {
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    background: white;
+
+    transition: 0.2s ease;
+}
+
+.comment-form textarea:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(112, 87, 255, 0.10);
+}
+
+
+/* =================================
+   POST COMMENT BUTTON
+   ================================= */
+
+.comment-form button {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: var(--dark);
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.comment-form button:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   COMMENTS
+   ================================= */
+
+.comment-list {
+    margin-top: 28px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-card {
+    padding: 17px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.comment-header strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 15px;
+}
+
+.comment-header strong i {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.comment-header small {
+    color: #999;
+    font-size: 12px;
+}
+
+.comment-card p {
+    margin-top: 8px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.no-comments {
+    color: #888;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.login-message {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =================================
+   MOBILE
+   ================================= */
+
+@media (max-width: 650px) {
+
+    .social-actions {
+        gap: 10px;
+    }
+
+    .like-button,
+    .like-info,
+    .comment-info {
+        font-size: 14px;
+    }
+
+    .like-button i,
+    .like-info i {
+        font-size: 19px;
+    }
+
+    .comment-info i {
+        font-size: 18px;
+    }
+
+    .comment-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
